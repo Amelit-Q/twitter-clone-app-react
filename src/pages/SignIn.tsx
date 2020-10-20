@@ -3,6 +3,9 @@ import React from 'react';
 import { theme } from '../theme';
 import './../styles/signin.scss';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import SearchIcon from '@material-ui/icons/Search';
+import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
+import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -12,6 +15,36 @@ const useStyles = makeStyles((theme) => ({
   blueSide: {
     flex: '0 0 50%',
     backgroundColor: '#1DA1F2',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  blueSideBigTwitterIcon: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: 650,
+    height: 650,
+  },
+  blueSideListInfo: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    width: 380,
+    '& h6': {
+      display: 'flex',
+      alignItems: 'center',
+      color: 'white',
+      fontWeight: 700,
+      fontSize: 20,
+    },
+  },
+  blueSideListInfoItem: {
+    marginBottom: 40,
+  },
+  blueSideListInfoIcon: {
+    fontSize: 32,
+    marginRight: 15,
   },
   loginSide: {
     display: 'flex',
@@ -40,15 +73,25 @@ export const SignIn = () => {
   return (
     <div className={classes.wrapper}>
       <section className={classes.blueSide}>
-        <ul>
+        <TwitterIcon color="primary" className={classes.blueSideBigTwitterIcon} />
+        <ul className={classes.blueSideListInfo}>
           <li>
-            <Typography>Follow your interests.</Typography>
+            <Typography variant="h6">
+              <SearchIcon className={classes.blueSideListInfoIcon} />
+              Follow your interests.
+            </Typography>
           </li>
           <li>
-            <Typography>Hear what people are talking about</Typography>
+            <Typography variant="h6">
+              <PeopleAltOutlinedIcon className={classes.blueSideListInfoIcon} />
+              Hear what people are talking about
+            </Typography>
           </li>
           <li>
-            <Typography>Join the conversation.</Typography>
+            <Typography variant="h6">
+              <ChatBubbleIcon className={classes.blueSideListInfoIcon} />
+              Join the conversation.
+            </Typography>
           </li>
         </ul>
       </section>
