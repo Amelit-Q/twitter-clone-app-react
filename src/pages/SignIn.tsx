@@ -14,19 +14,23 @@ const useStyles = makeStyles((theme) => ({
   },
   blueSide: {
     flex: '0 0 50%',
-    backgroundColor: '#1DA1F2',
+    backgroundColor: '#71C9F8',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
+    position: 'relative',
   },
   blueSideBigTwitterIcon: {
     position: 'absolute',
-    left: 0,
-    top: 0,
-    width: 650,
-    height: 650,
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '350%',
+    height: '350%',
   },
   blueSideListInfo: {
+    position: 'relative',
     listStyle: 'none',
     padding: 0,
     margin: 0,
@@ -113,6 +117,7 @@ export const SignIn = () => {
             Log in
           </Button>
         </div>
+        1.24
       </section>
     </div>
   );
